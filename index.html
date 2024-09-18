@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Pokebola-pokeball-png-0.png/640px-Pokebola-pokeball-png-0.png" type="image/x-icon">
     <title>Pokedex</title>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
-        integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Fonte -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +21,6 @@
 <body>
     <section class="content">
         <h1>Pokedex</h1>
-
         <ol id="pokemonList" class="pokemons">
             <!-- ..... Pokemons ..... -->
         </ol>
@@ -35,9 +32,60 @@
         </div>
     </section>
 
+    <!-- Popup para exibir detalhes do Pokémon -->
+    <div class="popup" id="pokemonPopup" style="display: none;">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <div id="pokemonDetails">
+                <h2 id="pokemonName"></h2>
+                <img id="pokemonImage" src="" alt="Imagem do Pokémon">
+                <div id="pokemonStats">
+                    <h3>Stats</h3>
+                    <div class="stat-bar">
+                        <span class="stat-label">Attack:</span>
+                        <div class="bar-container">
+                            <div class="bar" id="attackBar"></div>
+                        </div>
+                        <span class="stat-value" id="attackValue"></span>
+                    </div>
+                    <div class="stat-bar">
+                        <span class="stat-label">Defense:</span>
+                        <div class="bar-container">
+                            <div class="bar" id="defenseBar"></div>
+                        </div>
+                        <span class="stat-value" id="defenseValue"></span>
+                    </div>
+                    <div class="stat-bar">
+                        <span class="stat-label">Special Attack:</span>
+                        <div class="bar-container">
+                            <div class="bar" id="specialAttackBar"></div>
+                        </div>
+                        <span class="stat-value" id="specialAttackValue"></span>
+                    </div>
+                    <div class="stat-bar">
+                        <span class="stat-label">Special Defense:</span>
+                        <div class="bar-container">
+                            <div class="bar" id="specialDefenseBar"></div>
+                        </div>
+                        <span class="stat-value" id="specialDefenseValue"></span>
+                    </div>
+                    <div class="stat-bar">
+                        <span class="stat-label">Speed:</span>
+                        <div class="bar-container">
+                            <div class="bar" id="speedBar"></div>
+                        </div>
+                        <span class="stat-value" id="speedValue"></span>
+                    </div>
+                </div>
+                <h3>Golpes</h3>
+                <ul id="pokemonMoves"></ul>
+            </div>
+        </div>
+    </div>
+ 
+
     <script src="/assets/js/pokemon-model.js"></script>
     <script src="/assets/js/poke-api.js"></script>
     <script src="/assets/js/main.js"></script>
 </body>
-
 </html>
